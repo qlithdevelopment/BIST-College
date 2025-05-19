@@ -1,4 +1,5 @@
 import React from "react";
+import NoticeBoard from "./NoticeBoard";
 
 const FoundersSection = () => {
   const notices = [
@@ -24,13 +25,13 @@ const FoundersSection = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-12 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+    <section className="bg-gray-50 py-20 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       {/* Left Side - Image */}
       <div className="w-full h-full flex justify-center">
         <img
           src="https://res.cloudinary.com/df9p9f2o2/image/upload/v1747211074/Frame_1000015046_po2ufh.png"
           alt="BCCST Founder"
-          className="w-full h-auto object-cover"
+          className="w-full"
         />
       </div>
 
@@ -54,40 +55,17 @@ const FoundersSection = () => {
           successful careers but also to become responsible and enlightened
           citizens of tomorrow.
         </p>
-        <div className="mt-4 text-sm italic text-gray-600">
+        <div className="mt-4 text-sm italic text-primary">
           – Er. Deepak Kumar Sahoo (Chairman), Er. Anshuman Pattanayak
           (Secretary-Cum-Managing Director), Mr. Ashis Kumar Bhattacharjee
           (Principal)
         </div>
+        
       </div>
 
       {/* Right - Notice Board */}
-      <div className="bg-white shadow-lg rounded-xl p-6 border-t-4 border-primary transition-all transform hover:scale-105 hover:shadow-xl">
-        <h3 className="text-xl font-semibold text-primary mb-4 flex items-center space-x-2">
-          <span role="img" aria-label="pin">
-            📌
-          </span>{" "}
-          <span>Notice Board</span>
-        </h3>
-        <div className="space-y-2 text-sm text-gray-700">
-          {notices.map((notice, idx) => (
-            <div
-              key={idx}
-              className="border-b pb-4 last:pb-0 bg-primary/20 p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="flex justify-between items-center mb-2">
-                <div className="text-xs text-gray-500 font-medium">
-                  {notice.date}
-                </div>
-                <div className="text-xs font-medium text-gray-500">Updated</div>
-              </div>
-              <div className="font-semibold text-gray-800 mb-2">
-                {notice.title}
-              </div>
-              <p className="text-gray-600 mt-1">{notice.detail}</p>
-            </div>
-          ))}
-        </div>
+      <div>
+        <NoticeBoard />
       </div>
     </section>
   );
